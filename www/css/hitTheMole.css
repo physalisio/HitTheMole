@@ -1,0 +1,80 @@
+
+
+html {
+}
+
+body{
+  font:   15px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#timer,.points{
+  position:fixed;
+  top: 20px;
+  font-size: 1.4rem;
+  color: #ffcc01;
+  border-radius: 6px;
+  padding:1px 3px;
+}
+
+.points{
+  right:120px;
+}
+
+#timer{
+  right: 9px;
+}
+
+#background {
+  background: #2f3d0d url(../images/background.png) no-repeat center center;
+  /*background-attachment:  fixed;*/
+  /*background-size: cover;*/
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+}
+
+.outer {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+  padding:0;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto; 
+  /*width: whatever width you want;*/
+}
+
+#game {
+  size: auto;
+  /*padding:9px;*/
+}
+
+#playingField {
+  position: relative; 
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width:200px;
+}
+
+#mole {
+    background: url(../images/mole.png) -700px 0;
+    /*opacity: 1;*/
+/*    left: 85px;
+    top: 492px;*/
+    background-size: cover;
+    position: relative;
+    width: 100px;
+    height: 123px;
+    visibility: hidden;
+}
