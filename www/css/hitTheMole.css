@@ -5,6 +5,7 @@ html {
 
 body{
   font:   15px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: fixed;
 }
 
 #timer,.points{
@@ -25,7 +26,7 @@ body{
 }
 
 #background {
-  background: #2f3d0d url(../images/background.png) no-repeat center center;
+  /*background: #2f3d0d url(../images/background.png) no-repeat center center;*/
   /*background-attachment:  fixed;*/
   /*background-size: cover;*/
   position: fixed;
@@ -33,6 +34,19 @@ body{
   height: 100%;
   top:0;
   left:0;
+  z-index: -2;
+}
+
+#holes {
+  /*background: url(../images/holes.png) no-repeat center center;*/
+  /*background-attachment:  fixed;*/
+  /*background-size: cover;*/
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  z-index: 2;
 }
 
 .outer {
@@ -68,13 +82,13 @@ body{
 }
 
 #mole {
-    background: url(../images/mole.png) -700px 0;
+    background: url(../images/theMole1.png);
     /*opacity: 1;*/
 /*    left: 85px;
     top: 492px;*/
     background-size: cover;
-    position: relative;
-    width: 100px;
-    height: 123px;
+    position: absolute;
+    width: 80px;
+    height: 88px;
     visibility: hidden;
 }
