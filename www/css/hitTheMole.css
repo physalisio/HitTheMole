@@ -4,91 +4,110 @@ html {
 }
 
 body{
-  font:   15px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  position: fixed;
+    font:   15px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: fixed;
 }
 
 #timer,.points{
-  position:fixed;
-  top: 20px;
-  font-size: 1.4rem;
-  color: #ffcc01;
-  border-radius: 6px;
-  padding:1px 3px;
+    position:fixed;
+    top: 20px;
+    font-size: 1.4rem;
+    color: #ffcc01;
+    border-radius: 6px;
+    padding:1px 3px;
 }
 
 .points{
-  right:120px;
+    right:120px;
 }
 
 #timer{
-  right: 9px;
+    right: 9px;
 }
 
 #background {
-  /*background: #2f3d0d url(../images/background.png) no-repeat center center;*/
-  /*background-attachment:  fixed;*/
-  /*background-size: cover;*/
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top:0;
-  left:0;
-  z-index: -2;
+    /*background: #2f3d0d url(../images/background.png) no-repeat center center;*/
+    /*background-attachment:  fixed;*/
+    /*background-size: cover;*/
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    z-index: -2;
 }
 
 #holes {
-  /*background: url(../images/holes.png) no-repeat center center;*/
-  /*background-attachment:  fixed;*/
-  /*background-size: cover;*/
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top:0;
-  left:0;
-  z-index: 2;
+    /*background: url(../images/holes.png) no-repeat center center;*/
+    /*background-attachment:  fixed;*/
+    /*background-size: cover;*/
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    z-index: 2;
 }
 
 .outer {
-  display: table;
-  position: absolute;
-  height: 100%;
-  width: 100%;
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .middle {
-  display: table-cell;
-  vertical-align: middle;
-  padding:0;
+    display: table-cell;
+    vertical-align: middle;
+    padding:0;
 }
 
 .inner {
-  margin-left: auto;
-  margin-right: auto; 
-  /*width: whatever width you want;*/
+    margin-left: auto;
+    margin-right: auto; 
+    /*width: whatever width you want;*/
 }
 
 #game {
-  size: auto;
-  /*padding:9px;*/
+    size: auto;
+    /*padding:9px;*/
 }
 
 #playingField {
-  position: relative; 
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  width:200px;
+    position: relative; 
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width:200px;
+}
+
+.hole {
+    background: url(../images/hole.png);
+    background-size: cover;
+    position: absolute;
+    width: 228px;
+    height: 101px;
+    z-index: 3;
+}
+
+.holeBackground {
+    background: url(../images/holeBackground.png);
+    background-size: cover;
+    position: absolute;
+    width: 228px;
+    height: 101px;
+    z-index: 1;
 }
 
 #mole {
     background: url(../images/theMole1.png);
     /*opacity: 1;*/
-/*    left: 85px;
-    top: 492px;*/
+    /*    left: 85px;
+        top: 492px;*/
     background-size: cover;
     position: absolute;
     width: 80px;
     height: 88px;
     visibility: hidden;
+    z-index: 2;
 }
