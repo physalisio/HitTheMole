@@ -19,6 +19,8 @@ var aspectRatio;
 var enlargement = 1;
 var borderWidth = 0;
 var interval = 1000;
+var moleShowingInterval = 200;
+var animationSpeed = 200;
 var movementHeight = 10;
 
 function onDeviceReady() {
@@ -60,6 +62,10 @@ function initMole() {
     mole.style["height"] = mole.offsetHeight * enlargement + "px";
     mole.style["width"] = mole.offsetWidth * enlargement + "px";
     initMoleClickHandler();
+
+    var stars = document.getElementById("stars");
+    stars.style["height"] = stars.offsetHeight * enlargement + "px";
+    stars.style["width"] = stars.offsetWidth * enlargement + "px";
 }
 
 function initMoleClickHandler() {
@@ -70,6 +76,12 @@ function initMoleClickHandler() {
         var pointText = document.getElementById("points");
         pointText.innerHTML = points;
         interval -= 25;
+        animationSpeed -= 25;
+        moleShowingInterval -= 25;
+        var stars = document.getElementById("stars");
+        stars.style.visibility = "visible";
+        stars.style["left"] = mole.offsetLeft - (stars.offsetWidth - mole.offsetWidth) / 2 + "px";
+        stars.style["top"] = mole.offsetTop - (stars.offsetHeight / 3) + "px";
     };
 }
 
@@ -104,6 +116,7 @@ function showTheMole() {
     initMoleClickHandler();
     var mole = document.getElementById("mole");
     mole.style.visibility = "visible";
+    var stars = document.getElementById("stars");
 
     var i = 6;
     var interval1 = setInterval(function () {
@@ -114,21 +127,23 @@ function showTheMole() {
                 var j = 0;
                 var interval2 = setInterval(function () {
                     mole.style["top"] = (mole.offsetTop + movementHeight) + "px";
+                    stars.style["top"] = (stars.offsetTop + movementHeight) + "px";
 
                     if (j === 6) {
                         clearInterval(interval2);
                         mole.style.visibility = "hidden";
+                        stars.style.visibility = "hidden"
                         setTimeout(function () {
                             showTheMole();
-                        }, 3000);
+                        }, moleShowingInterval);
                     }
                     j++;
-                }, 200);
+                }, animationSpeed);
             }, interval);
             clearInterval(interval1);
         }
         i--;
-    }, 200);
+    }, animationSpeed);
 }
 
 function setMolePosition() {
@@ -136,6 +151,7 @@ function setMolePosition() {
     var molePosition = molePositions[randomIndex];
     var positionX = molePosition["x"] * enlargement - borderWidth;
     var positionY = molePosition["y"] * enlargement;
+    var mole = document.getElementById("mole");
     mole.style["left"] = positionX + "px";
     mole.style["top"] = positionY + "px";
 }
