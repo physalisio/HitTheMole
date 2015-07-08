@@ -22,13 +22,10 @@ var interval = 1000;
 var moleShowingInterval = 200;
 var animationSpeed = 200;
 var movementHeight = 10;
-var scene = sjs.Scene({w: 1136, h: 640});
-var moleSprite;
 
 function onDeviceReady() {
     setBackgroundSize();
 
-    initMoleSprite();
     initMole();
     initHoles();
     setTimeout("showTheMole()", interval);
@@ -58,47 +55,6 @@ function setBackgroundSize() {
 
     enlargement = background.offsetHeight / 640;
     movementHeight = movementHeight * enlargement;
-}
-
-function initMoleSprite() {
-//    scene.loadImages(['../www/images/mole.png'], function() {
-//        moleSprite = scene.Sprite('../www/images/mole.png');
-//        moleSprite.size(100, 123);
-//        moleSprite.update();
-//        moleSprite.offset(100, 100);
-//        moleSprite.scale(enlargement);
-//        moleSprite.update();
-//    });
-    moleSprite = document.getElementById("moleSprite");
-    moleSprite.style["transform"] = "scale(enlargement, enlargement)";
-
-//    var interval = setInterval(function () {
-//        moleSprite.style["background-position"] = backgroundPositionX + "px 0px";
-//        backgroundPositionX += 100;
-//    }, 200);
-
-    var backgroundPositionX = 0;
-    var moleGoingUp = true;
-    var interval1 = setInterval(function () {
-        console.log("backgroundPositionX: " + backgroundPositionX + ", moleGoingUp: " + moleGoingUp);
-        if (backgroundPositionX >= 0) {
-            moleSprite.style["background-position"] = backgroundPositionX + "px 0px";
-            if (backgroundPositionX === 700){
-                moleGoingUp = false;
-            }
-            if (moleGoingUp) {
-                backgroundPositionX += 100;
-            } else {
-                backgroundPositionX -= 100;
-            }
-        } else {
-            clearInterval(interval1);
-            moleSprite.style.visibility = "hidden";
-            setTimeout(function () {
-                initMoleSprite();
-            }, moleShowingInterval);
-        }
-    }, animationSpeed);
 }
 
 function initMole() {

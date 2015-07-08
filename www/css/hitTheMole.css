@@ -108,21 +108,6 @@ body{
     z-index: 2;
 }
 
-#moleSprite {
-    background-image: url(../images/mole.png);
-    /*opacity: 1;*/
-    /*    left: 85px;
-        top: 492px;*/
-    /*background-size: cover;*/
-    position: absolute;
-    left: 100px;
-    top: 100px;
-    width: 100px;
-    height: 123px;
-/*    visibility: hidden;*/
-    z-index: 2;
-}
-
 #stars {
     background: url(../images/stars.png);
     /*opacity: 1;*/
