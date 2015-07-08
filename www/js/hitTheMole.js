@@ -75,9 +75,9 @@ function initMoleClickHandler() {
         points += 10;
         var pointText = document.getElementById("points");
         pointText.innerHTML = points;
-        interval -= 25;
-        animationSpeed -= 25;
-        moleShowingInterval -= 25;
+        interval -= 10;
+        animationSpeed -= 10;
+        moleShowingInterval -= 10;
         var stars = document.getElementById("stars");
         stars.style.visibility = "visible";
         stars.style["left"] = mole.offsetLeft - (stars.offsetWidth - mole.offsetWidth) / 2 + "px";
